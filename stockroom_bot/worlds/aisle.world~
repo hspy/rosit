@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+<world name="aisle">
+<gui>
+  <camera name="camera">
+    <pose>3 -2 3.5 0.0 .85 2.4</pose>
+    <view_controller>orbit</view_controller>
+  </camera>
+</gui>
+<include><uri>model://sun</uri></include>
+<include><uri>model://ground_plane</uri></include>
+
+    <include>
+      <name>bin_0</name>
+      <pose>-1.5 -1.5 0.5 0 0 3.1415</pose>
+      <uri>model://bin</uri>
+    </include>
+    <model name="bin_0_tag">
+      <static>true</static>
+      <pose>-1.5 -1.6875 0.63 0 0 3.1415</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.2 0.01 0.2</size></box></geometry>
+          <material>
+            <script>
+              <uri>model://bin/tags</uri>
+              <!--<uri>model://bin/materials/textures</uri>-->
+              <name>product_0</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+  
+  <model name="wall_1">
+    <static>true</static>
+    <pose>2.125 -1.75 0.35 0 0 0</pose>
+    <link name="link">
+      <collision name='visual'>
+        <geometry>
+          <box>
+            <size>7.75 0.1 0.7</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>7.75 0.1 0.7</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+
+</world>
+</sdf>
